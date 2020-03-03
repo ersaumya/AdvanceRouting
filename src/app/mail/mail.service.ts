@@ -15,4 +15,9 @@ export class MailService {
       .get<Mail[]>(`http://localhost:3000/messages?folder=${folder}`)
       .pipe(tap(response => console.log(response)));
   }
+
+  getMessage(id:string):Observable<Mail>{
+    return this.httpClient.get<Mail>(`http://localhost:3000/messages/${id}`)
+    .pipe(tap(response=>console.log(response)));
+  }
 }

@@ -8,13 +8,19 @@ import { MailAppComponent } from './components/mail-app/mail-app.component';
 import { MailRoutingModule } from './mail-routing.module';
 import { MailFolderResolve } from './container/mail-folder/mail-folder.resolve';
 import { MailViewComponent } from './components/mail-view/mail-view.component';
+import { MailViewResolve } from './components/mail-view/mail-view.resolve';
 
 
 
 @NgModule({
-  declarations: [MailFolderComponent, MailItemComponent, MailAppComponent, MailViewComponent],
+  declarations: [
+    MailFolderComponent,
+    MailItemComponent,
+    MailAppComponent,
+    MailViewComponent
+  ],
   exports: [MailAppComponent],
   imports: [CommonModule, FormsModule, MailRoutingModule],
-  providers: [MailService, MailFolderResolve]
+  providers: [MailService, MailFolderResolve, MailViewResolve]
 })
 export class MailModule {}
