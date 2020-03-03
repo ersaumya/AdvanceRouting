@@ -1,3 +1,4 @@
+import { MailViewComponent } from './components/mail-view/mail-view.component';
 import { MailFolderResolve } from './container/mail-folder/mail-folder.resolve';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,6 +12,11 @@ export const ROUTES: Routes = [
         resolve:{
             messages:MailFolderResolve
         } 
+    },
+    {
+        path:'message/:id',
+        component:MailViewComponent,
+        outlet:'pane'
     }
 ];
 
