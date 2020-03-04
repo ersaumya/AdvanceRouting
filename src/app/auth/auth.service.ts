@@ -18,6 +18,6 @@ export class AuthService {
   }
 
   isLoggedInChild(){
-    return of(false);
+    return of(true);
   }
 }

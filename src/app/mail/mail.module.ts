@@ -1,3 +1,4 @@
+import { MailViewGuard } from './components/mail-view/mail-view.guard';
 import { MailService } from './mail.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -22,6 +23,6 @@ import { AuthModule } from '../auth/auth.module';
   ],
   exports: [MailAppComponent],
   imports: [CommonModule, FormsModule,AuthModule, MailRoutingModule],
-  providers: [MailService, MailFolderResolve, MailViewResolve]
+  providers: [MailService, MailFolderResolve, MailViewResolve,MailViewGuard]
 })
 export class MailModule {}
