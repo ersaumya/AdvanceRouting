@@ -16,4 +16,8 @@ export class AuthService {
   isLoggedIn(){
     return of(true);
   }
+
+  isLoggedInChild(){
+    return of(false);
+  }
 }
