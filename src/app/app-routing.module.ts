@@ -2,6 +2,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules, PreloadingStrategy, Route, preload } from '@angular/router';
 import { Observable,of } from 'rxjs';
+import { AuthGuard } from './auth/auth.guard';
 
 /* custom preload */
 export class CustomPreload implements PreloadingStrategy{
@@ -11,7 +12,7 @@ export class CustomPreload implements PreloadingStrategy{
 }
 
 export const mainRoutes: Routes = [
-  { path:'dashboard',data:{preload:true},
+  { path:'dashboard',data:{preload:true},canLoad:[AuthGuard],
   loadChildren:()=>import('./dashboard/dashboard.module').then(m=>m.DashboardModule)},
   { path: '**', redirectTo: 'mail/folder/inbox' }
 ];
