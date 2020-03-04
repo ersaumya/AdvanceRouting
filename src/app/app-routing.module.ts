@@ -1,6 +1,6 @@
 import { DashboardModule } from './dashboard/dashboard.module';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules, PreloadingStrategy, Route, preload } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules, PreloadingStrategy, Route } from '@angular/router';
 import { Observable,of } from 'rxjs';
 import { AuthGuard } from './auth/auth.guard';
 

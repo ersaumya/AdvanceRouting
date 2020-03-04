@@ -9,6 +9,7 @@ import { MailRoutingModule } from './mail-routing.module';
 import { MailFolderResolve } from './container/mail-folder/mail-folder.resolve';
 import { MailViewComponent } from './components/mail-view/mail-view.component';
 import { MailViewResolve } from './components/mail-view/mail-view.resolve';
+import { AuthModule } from '../auth/auth.module';
 
 
 
@@ -20,7 +21,7 @@ import { MailViewResolve } from './components/mail-view/mail-view.resolve';
     MailViewComponent
   ],
   exports: [MailAppComponent],
-  imports: [CommonModule, FormsModule, MailRoutingModule],
+  imports: [CommonModule, FormsModule,AuthModule, MailRoutingModule],
   providers: [MailService, MailFolderResolve, MailViewResolve]
 })
 export class MailModule {}
